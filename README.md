@@ -35,7 +35,7 @@ $this->resultPage="http://127.0.0.1/";//返回页面
 
 - 查看`waflog`文件夹下发现生成了logs.txt和flag.txt说明生成了日志文件和flag文件，打开即可看到ip对应的flag
 
-**![img](https://raw.githubusercontent.com/sharpleung/CTF-WAF/master/picture/pic1.bmp)**
+**![img](https://raw.githubusercontent.com/sharpleung/CTF-WAF/master/picture/pic3.bmp)**
 
 - 修改日志系统密码`/waflog/log.php`代码4行，修改密码
 
