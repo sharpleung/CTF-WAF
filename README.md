@@ -4,7 +4,7 @@
 ## 联系方式
 - ![](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-Gqleung-brightgreen.svg)  
 
-- ![](https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2-xiao%20leung's%20Blog-blueviolet)[个人博客](https://www.plasf)
+- [![](https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2-xiao%20leung's%20Blog-blueviolet)](https://www.plasf)
 ##  目录结构
 
 ```http
