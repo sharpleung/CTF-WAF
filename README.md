@@ -2,7 +2,7 @@
 ## 描述
 该项目针对CTF线下AWD比赛临时开发的WAF，能够拦截XSS、SQl、反序列化、菜刀/蚁剑、以及一些CTF常见的危险函数流量。可以绕过对页面检测的check,拦截返回正常页面的html。并且能够对简单payload进行流量转发，自动反打设置好的IP。如果比赛禁止使用通防也可以一键关闭通防，作为流量监控审计所用。欢迎各位大佬对项目进行改进。使用时候可以使用.user.ini将其包含于所有php文件。
 ## 联系方式
-- 作者:Gqleung
+- <svg xmlns="http://www.w3.org/2000/svg" width="90" height="20"><linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><rect rx="3" width="90" height="20" fill="#555"/><rect rx="3" x="37" width="53" height="20" fill="#4c1"/><path fill="#4c1" d="M37 0h4v20h-4z"/><rect rx="3" width="90" height="20" fill="url(#a)"/><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="19.5" y="15" fill="#010101" fill-opacity=".3">Author</text><text x="19.5" y="14">Author</text><text x="60.5" y="15" fill="#010101" fill-opacity=".3">name</text><text x="62.5" y="14">name</text></g></svg> Gqleung
 - 博客：[个人博客](https://www.plasf)
 ##  目录结构
 
