@@ -1,4 +1,5 @@
 <?php
+/**CTF—**/
 error_reporting(0);
 class CTF_WAF{
 	public $getfilter;
@@ -17,14 +18,14 @@ class CTF_WAF{
 		//cookie拦截规则
 		$this->cookiefilter = "benchmark\s*?\(.*\)|sleep\s*?\(.*\)|load_file\s*?\\(|\\b(and|or)\\b\\s*?([\\(\\)'\"\\d]+?=[\\(\\)'\"\\d]+?|[\\(\\)'\"a-zA-Z]+?=[\\(\\)'\"a-zA-Z]+?|>|<|\s+?[\\w]+?\\s+?\\bin\\b\\s*?\(|\\blike\\b\\s+?[\"'])|\\/\\*.*\\*\\/|<\\s*script\\b|\\bEXEC\\b|UNION.+?SELECT\s*(\(.+\)\s*|@{1,2}.+?\s*|\s+?.+?|(`|'|\").*?(`|'|\")\s*)|UPDATE\s*(\(.+\)\s*|@{1,2}.+?\s*|\s+?.+?|(`|'|\").*?(`|'|\")\s*)SET|INSERT\\s+INTO.+?VALUES|(SELECT|DELETE)@{0,2}(\\(.+\\)|\\s+?.+?\\s+?|(`|'|\").*?(`|'|\"))FROM(\\(.+\\)|\\s+?.+?|(`|'|\").*?(`|'|\"))|(CREATE|ALTER|DROP|TRUNCATE)\\s+(TABLE|DATABASE)";
 		//其他拦截规则
-		$this->orther ="eval|assert|\`|\~|\^|<\?php|[oc]:\d+:|pcntl_alarm|pcntl_fork|pcntl_waitpid|pcntl_wait|pcntl_wifexited|pcntl_wifstopped|pcntl_wifsignaled|pcntl_wifcontinued|pcntl_wexitstatus|pcntl_wtermsig|pcntl_wstopsig|pcntl_signal|pcntl_signal_get_handler|pcntl_signal_dispatch|pcntl_get_last_error|pcntl_strerror|pcntl_sigprocmask|pcntl_sigwaitinfo|pcntl_sigtimedwait|pcntl_exec|pcntl_getpriority|pcntl_setpriority|pcntl_async_signals|system|exec|shell_exec|popen|proc_open|passthru|symlink|link|syslog|imap_open|ld\s|mail|flag|cat\s|etc\spasswd|IFS";
+		$this->orther ="eval\(.*\)|phpinfo\(\)|assert\(.*\)|\`|\~|\^|<\?php|[oc]:\d+:|pcntl_alarm|pcntl_fork|pcntl_waitpid|pcntl_wait|pcntl_wifexited|pcntl_wifstopped|pcntl_wifsignaled|pcntl_wifcontinued|pcntl_wexitstatus|pcntl_wtermsig|pcntl_wstopsig|pcntl_signal|pcntl_signal_get_handler|pcntl_signal_dispatch|pcntl_get_last_error|pcntl_strerror|pcntl_sigprocmask|pcntl_sigwaitinfo|pcntl_sigtimedwait|pcntl_exec|pcntl_getpriority|pcntl_setpriority|pcntl_async_signals|system\(.*\)|exec\(.*\)|shell_exec\(.*\)|popen\(.*\)|proc_open\(.*\)|passthru\(.*\)|symlink\(.*\)|link\(.*\)|syslog\(.*\)|imap_open\(.*\)|flag|cat\s|etc\spasswd|IFS|display_errors|catch|ini_set|set_time_limit(0)";
 
 		$this->url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 		$this->dir = $_SERVER['DOCUMENT_ROOT'].'/'.'waflog/';
 		$this->ip = [];
 		$this->read_ip();
 		$this->resultPage="http://127.0.0.1/";//返回页面
-		$this->Waf_switch=1;//WAF开关1开启，0关闭
+		$this->Waf_switch=0;//WAF开关1开启，0关闭
 
 	}
 

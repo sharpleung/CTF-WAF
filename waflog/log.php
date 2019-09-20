@@ -24,7 +24,7 @@ $postfilter = "<.*=(&#\\d+?;?)+?>|<.*data=data:text\\/html.*>|\\b(alert\\(|confi
 		//cookie拦截规则
 $cookiefilter = "benchmark\s*?\(.*\)|sleep\s*?\(.*\)|load_file\s*?\\(|\\b(and|or)\\b\\s*?([\\(\\)'\"\\d]+?=[\\(\\)'\"\\d]+?|[\\(\\)'\"a-zA-Z]+?=[\\(\\)'\"a-zA-Z]+?|>|<|\s+?[\\w]+?\\s+?\\bin\\b\\s*?\(|\\blike\\b\\s+?[\"'])|\\/\\*.*\\*\\/|<\\s*script\\b|\\bEXEC\\b|UNION.+?SELECT\s*(\(.+\)\s*|@{1,2}.+?\s*|\s+?.+?|(`|'|\").*?(`|'|\")\s*)|UPDATE\s*(\(.+\)\s*|@{1,2}.+?\s*|\s+?.+?|(`|'|\").*?(`|'|\")\s*)SET|INSERT\\s+INTO.+?VALUES|(SELECT|DELETE)@{0,2}(\\(.+\\)|\\s+?.+?\\s+?|(`|'|\").*?(`|'|\"))FROM(\\(.+\\)|\\s+?.+?|(`|'|\").*?(`|'|\"))|(CREATE|ALTER|DROP|TRUNCATE)\\s+(TABLE|DATABASE)";
 
-$orther ="eval|assert|\`|\~|\^|<\?php|[oc]:\d+:|pcntl_alarm|pcntl_fork|pcntl_waitpid|pcntl_wait|pcntl_wifexited|pcntl_wifstopped|pcntl_wifsignaled|pcntl_wifcontinued|pcntl_wexitstatus|pcntl_wtermsig|pcntl_wstopsig|pcntl_signal|pcntl_signal_get_handler|pcntl_signal_dispatch|pcntl_get_last_error|pcntl_strerror|pcntl_sigprocmask|pcntl_sigwaitinfo|pcntl_sigtimedwait|pcntl_exec|pcntl_getpriority|pcntl_setpriority|pcntl_async_signals|system|exec|shell_exec|popen|proc_open|passthru|symlink|link|syslog|imap_open|ld\s|mail|flag|cat\s|etc\spasswd|IFS";
+$orther ="eval\(.*\)|phpinfo\(\)|assert\(.*\)|\`|\~|\^|<\?php|[oc]:\d+:|pcntl_alarm|pcntl_fork|pcntl_waitpid|pcntl_wait|pcntl_wifexited|pcntl_wifstopped|pcntl_wifsignaled|pcntl_wifcontinued|pcntl_wexitstatus|pcntl_wtermsig|pcntl_wstopsig|pcntl_signal|pcntl_signal_get_handler|pcntl_signal_dispatch|pcntl_get_last_error|pcntl_strerror|pcntl_sigprocmask|pcntl_sigwaitinfo|pcntl_sigtimedwait|pcntl_exec|pcntl_getpriority|pcntl_setpriority|pcntl_async_signals|system\(.*\)|exec\(.*\)|shell_exec\(.*\)|popen\(.*\)|proc_open\(.*\)|passthru\(.*\)|symlink\(.*\)|link\(.*\)|syslog\(.*\)|imap_open\(.*\)|flag|cat\s|etc\spasswd|IFS|display_errors|catch|ini_set|set_time_limit(0)";
 
 function Check_Flux($Value,$ArrFiltReq){
 			if(is_array($Value)){
@@ -47,7 +47,6 @@ function login(){
 function login_check($pass){
 	
 	$passwd=$GLOBALS['passwd'];
-	var_dump($passwd);
 	if($pass!=$passwd){//此处修改密码
 		die("Password error!");
 	}else{
@@ -87,7 +86,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 </style>
 <title>日志</title>
-<body>
+<body >
 	<center><h2>日志审计系统</h2></center>
 	<table class="table table-border table-bordered table-bg" style="margin-top: 10px">
 		<thead>
@@ -95,7 +94,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 				<th width="40">ID</th>
 				<th >URL</th>
 				<th width="90">方式</th>
-				<th>数据</th>
+				<th >数据</th>
 				<th width="150">时间</th>
 				<th width="130">类型判断</th>
 				<th width="100">操作</th>
@@ -139,7 +138,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 				<td><?php echo $i;?></td>
 				<td><?php echo json_decode($information,true)['url'];?></td>
 				<td><?php echo json_decode($information,true)['style'];?></td>
-				<td><?php echo htmlspecialchars(json_decode($information,true)['value'])  ;?></td>
+				<td ><p style="width: 1000px"><?php echo htmlspecialchars(json_decode($information,true)['value'])  ;?></p></td>
 				<td><?php echo date("Y-m-d h:i:sa",json_decode($information,true)['time']);?></td>
 				<td><?php
 				if($style=="danger")echo"疑似攻击";
