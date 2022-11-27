@@ -42,7 +42,7 @@ log.php(日志审计系统)
 
 封禁后：
 
-![image-20221126005322868](../../../../picture/image-20221126005322868.png)
+![image-20221126005322868](https://gqleung.oss-cn-guangzhou.aliyuncs.com/img/202211272013500.png)
 
 显示404
 
@@ -56,8 +56,9 @@ log.php(日志审计系统)
 
 输入账号密码即可登录，密码在`log.php`膝盖即可，同理需要设置日志路径。
 
-![image-20221126005729676](../../../../picture/image-20221126005729676.png)
+![image-20221126005729676](https://gqleung.oss-cn-guangzhou.aliyuncs.com/img/202211272013681.png)
 
 使用效果，匹配到疑似攻击事件，上传事件均会告警。
 
 ![image-20221126005850831](https://gqleung.oss-cn-guangzhou.aliyuncs.com/img/202211260059553.png)
+
